@@ -1,0 +1,192 @@
+/* Core Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eaeaea;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  height: 36px;
+  width: auto;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+
+.navbar-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.hamburger {
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #333;
+  display: block;
+}
+
+/* Responsive Hiding */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar {
+    padding: 1rem;
+  }
+
+  .hamburger {
+    font-size: 1.8rem;
+  }
+}
+
+/* Fullscreen Menu */
+.fullscreen-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+/* Close Button */
+.close-button {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000;
+  align-self: flex-end;
+  margin-bottom: 1rem;
+  margin-right: 4.25rem;
+}
+
+/* Menu Items */
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-size: 1.4rem;
+  color: #000;
+  margin-top: 2rem;
+  margin-left: 1rem;
+}
+
+.menu-content a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Slide Animations */
+.slide-in {
+  animation: slideDown 0.5s ease-out forwards;
+}
+
+.slide-out {
+  animation: slideUp 0.5s cubic-bezier(0.5, -0.25, 0.3, 1.25) forwards;
+}
+
+/* Fade Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+}
+
+/* Slide-in from top */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+/* Slide-out to top with bounce */
+@keyframes slideUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+/* Add to both navbar and fullscreen menu links */
+.navbar-links li a,
+.menu-content a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+
+/* The underline animation */
+.navbar-links li a::after,
+.menu-content a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 0%;
+  background-color: #000;
+  transition: width 0.3s ease;
+}
+
+/* On hover — underline slides in */
+.navbar-links li a:hover::after,
+.menu-content a:hover::after {
+  width: 100%;
+}

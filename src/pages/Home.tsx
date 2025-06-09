@@ -23,27 +23,6 @@ const Home = () => {
         <h1>Venkata Rangam Industries</h1>
         <h2>Welcome to Our Family Brand</h2>
         <p>Bringing natural goodness to your doorstep.</p>
-
-        <div className="product-dropdown">
-          <label htmlFor="product-select">Explore our products:</label>
-          <br />
-          <select id="product-select" onChange={handleProductChange} value={selectedProduct}>
-            <option value="" disabled>Select a product</option>
-            <option value="Milk">Milk</option>
-            <option value="Books">Books</option>
-            <option value="Manure">Meadow Manure</option>
-            <option value="Eggs">Eggs</option>
-          </select>
-
-          <br /><br />
-          <button
-            className="order-button"
-            onClick={handleOrderNow}
-            disabled={!selectedProduct}
-          >
-            Order Now
-          </button>
-        </div>
       </div>
     </section>
   );
