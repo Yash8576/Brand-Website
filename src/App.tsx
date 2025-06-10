@@ -7,6 +7,8 @@ import Books from './pages/Books';
 import Manure from './pages/Manure';
 import Eggs from './pages/Eggs';
 import Ghee from './pages/ghee';
+import About from './pages/About';
+import Cart from './pages/Cart';
 
 const App = () => {
   return (
@@ -19,6 +21,8 @@ const App = () => {
         <Route path="/Manure" element={<Manure />} />
         <Route path="/Eggs" element={<Eggs />} />
         <Route path="/Ghee" element={<Ghee />} />
+        <Route path="About" element={<About />} />
+        <Route path="Cart" element={<Cart />} />
       </Routes>
     </>
   );

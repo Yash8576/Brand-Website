@@ -2,7 +2,9 @@ import React from 'react';
 
 const Books = () => {
   return (
-    <div style={{ padding: '2rem' }}>
+    <div style={{ padding: '2rem',
+      backgroundColor: '#f8f8f8', 
+     }}>
       <h1>Books</h1>
       <p>Discover our curated collection of books for knowledge and growth.</p>
     </div>
